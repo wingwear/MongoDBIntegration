@@ -85,13 +85,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\UiPathTeam.Box.Activities\UiPathTeam.Box.Designer\UiPathTeam.Box.Designer.csproj">
-      <Project>{b94e5f5d-b50b-4180-9056-b433467af758}</Project>
-      <Name>UiPathTeam.Box.Designer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MongoIntegrationFull\UiPathTeam.MongoIntegration.csproj">
       <Project>{D489B19C-5799-4A3C-A576-4931E4FDD79B}</Project>
       <Name>UiPathTeam.MongoIntegration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UiPathTeam.Box.Designer\UiPathTeam.Box.Designer.csproj">
+      <Project>{b94e5f5d-b50b-4180-9056-b433467af758}</Project>
+      <Name>UiPathTeam.Box.Designer</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

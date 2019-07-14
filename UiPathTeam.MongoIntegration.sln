@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UiPathTeam.MongoIntegration
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UiPathTeam.MongoIntegration.Activities.Design", "MongoIntegrationFull.Activities.Design\UiPathTeam.MongoIntegration.Activities.Design.csproj", "{CE6D77FB-BA8B-4BE3-B971-72E7EDF171F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UiPathTeam.Box.Designer", "..\UiPathTeam.Box.Activities\UiPathTeam.Box.Designer\UiPathTeam.Box.Designer.csproj", "{B94E5F5D-B50B-4180-9056-B433467AF758}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UiPathTeam.Box.Designer", "UiPathTeam.Box.Designer\UiPathTeam.Box.Designer.csproj", "{B94E5F5D-B50B-4180-9056-B433467AF758}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

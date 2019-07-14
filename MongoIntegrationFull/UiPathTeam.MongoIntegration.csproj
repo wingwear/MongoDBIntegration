@@ -107,5 +107,11 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UiPathTeam.Box.Designer\UiPathTeam.Box.Designer.csproj">
+      <Project>{b94e5f5d-b50b-4180-9056-b433467af758}</Project>
+      <Name>UiPathTeam.Box.Designer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
