@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MongoIntegrationFull.Activities.Properties;
+using UiPathTeam.MongoDB.Activities.Properties;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Activities;
 using System.Threading;
 
-namespace MongoIntegrationFull.Activities
+namespace UiPathTeam.MongoDB.Activities
 {
     [LocalizedDisplayName("Update Document")]
     [LocalizedDescription("Update one document in Mongo DB")]
@@ -46,6 +46,11 @@ namespace MongoIntegrationFull.Activities
         [LocalizedCategory(nameof(Resources.Input))]
         [OverloadGroup("Replace Definitions")]
         public InArgument<BsonDocument> Replace { get; set; }
+
+        public UpdateDoc()
+        {
+            Constraints.Add(ParentConstraint.CheckThatParentsAreOfType<UpdateDoc, ParentScope>("Activity is valid only inside Mongo Database Scope"));
+        }
 
         /// <inheritdoc />
         protected override void CacheMetadata(CodeActivityMetadata metadata)

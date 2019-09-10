@@ -7,13 +7,13 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
-using MongoIntegrationFull.Enums;
-using MongoIntegrationFull.Properties;
-using MongoIntegrationFull.Tools;
-using static MongoIntegrationFull.Enums.TokenSource;
-using static MongoIntegrationFull.Enums.AuthScheme;
+using UiPathTeam.MongoDB.Enums;
+using UiPathTeam.MongoDB.Properties;
+using UiPathTeam.MongoDB.Tools;
+using static UiPathTeam.MongoDB.Enums.TokenSource;
+using static UiPathTeam.MongoDB.Enums.AuthScheme;
 
-namespace MongoIntegrationFull
+namespace UiPathTeam.MongoDB
 {
     /// <summary>
     /// The Application class holds an HTTP Client and list of API calls shared amongst the scope and child activities.

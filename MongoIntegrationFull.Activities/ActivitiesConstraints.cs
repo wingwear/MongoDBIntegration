@@ -3,7 +3,7 @@ using System.Activities;
 using System.Activities.Statements;
 using System.Activities.Validation;
 
-namespace MongoIntegrationFull.Activities
+namespace UiPathTeam.MongoDB.Activities
 {
     public static class ActivityConstraints
     {

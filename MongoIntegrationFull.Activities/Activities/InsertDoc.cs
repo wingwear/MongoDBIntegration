@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MongoIntegrationFull.Activities.Properties;
+using UiPathTeam.MongoDB.Activities.Properties;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Activities;
 using System.Threading;
 
-namespace MongoIntegrationFull.Activities
+namespace UiPathTeam.MongoDB.Activities
 {
     [LocalizedDisplayName("Insert Document")]
     [LocalizedDescription("Insert one document in Mongo DB")]
@@ -33,7 +33,11 @@ namespace MongoIntegrationFull.Activities
         [LocalizedCategory(nameof(Resources.Input))]
         public InArgument<BsonDocument> Document { get; set; }
 
-        /// <inheritdoc />
+        public InsertDoc()
+        {
+            Constraints.Add(ParentConstraint.CheckThatParentsAreOfType<InsertDoc, ParentScope>("Activity is valid only inside Mongo Database Scope"));
+        }
+
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
             base.CacheMetadata(metadata);

@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace MongoIntegrationFull.Activities.Design
+namespace UiPathTeam.MongoDB.Activities.Design
 {
     public class ActivityDecoratorControl : ContentControl
     {

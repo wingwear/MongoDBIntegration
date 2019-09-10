@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MongoIntegrationFull.Activities.Properties;
+﻿using System.Threading.Tasks;
+using UiPathTeam.MongoDB.Activities.Properties;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Activities;
 using System.Threading;
 
-namespace MongoIntegrationFull.Activities
+namespace UiPathTeam.MongoDB.Activities
 {
     [LocalizedDisplayName("Create Collection")]
     [LocalizedDescription("Create new Collection/Database in Mongo DB")]
@@ -28,23 +24,25 @@ namespace MongoIntegrationFull.Activities
         public InArgument<string> Collection { get; set; }
 
         // Options to create collections
-        [RequiredArgument]
         [LocalizedDisplayName("Capped")]
-        [LocalizedDescription("Whether collection should be capped")]
+        [LocalizedDescription("Whether collection should be capped, default is True")]
         [LocalizedCategory("Options to Create Collection")]
-        public InArgument<bool> Capped { get; set; }
+        public InArgument<bool?> Capped { get; set; }
 
-        [RequiredArgument]
         [LocalizedDisplayName("MaxSize")]
-        [LocalizedDescription("Maximum size of collection in bytes")]
+        [LocalizedDescription("Maximum size of collection in bytes, default is 1024")]
         [LocalizedCategory("Options to Create Collection")]
-        public InArgument<int> MaxSize { get; set; }
+        public InArgument<int?> MaxSize { get; set; }
 
-        [RequiredArgument]
         [LocalizedDisplayName("MaxCount")]
-        [LocalizedDescription("Maximum number of documents collection can store")]
+        [LocalizedDescription("Maximum number of documents collection can store, default is 1000")]
         [LocalizedCategory("Options to Create Collection")]
-        public InArgument<int> MaxCount { get; set; }
+        public InArgument<int?> MaxCount { get; set; }
+
+        public CreateCollection()
+        {
+            Constraints.Add(ParentConstraint.CheckThatParentsAreOfType<CreateCollection, ParentScope>("Activity is valid only inside Mongo Database Scope"));
+        }
 
         /// <inheritdoc />
         protected override void CacheMetadata(CodeActivityMetadata metadata)
@@ -63,9 +61,23 @@ namespace MongoIntegrationFull.Activities
 
         protected override void OutputResult(AsyncCodeActivityContext context)
         {
+            //Parse collection options if defined
             var capped = Capped.Get(context);
+            if (capped is null)
+            {
+                capped = true;
+            }
             var maxSize = MaxSize.Get(context);
+            if (maxSize is null)
+            {
+                maxSize = 1024;
+            }
             var maxCount = MaxCount.Get(context);
+            if (maxCount is null)
+            {
+                maxCount = 1000;
+            }
+
             var database = Database.Get(context);
             var collection = Collection.Get(context);
             var mongoProperty = context.DataContext.GetProperties()[ParentScope.ParentContainerPropertyTag].GetValue(context.DataContext) as MongoProperty;

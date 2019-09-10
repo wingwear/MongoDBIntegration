@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
-using MongoIntegrationFull.Activities.Properties;
+using UiPathTeam.MongoDB.Activities.Properties;
 
-namespace MongoIntegrationFull.Activities
+namespace UiPathTeam.MongoDB.Activities
 {
     [AttributeUsage(AttributeTargets.Property)]
     public class LocalizedCategoryAttribute : CategoryAttribute

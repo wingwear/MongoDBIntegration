@@ -1,4 +1,4 @@
-﻿namespace MongoIntegrationFull.Activities.Design
+﻿namespace UiPathTeam.MongoDB.Activities.Design
 {
     /// <summary>
     /// Interaction logic for ChildActivityDesigner.xaml

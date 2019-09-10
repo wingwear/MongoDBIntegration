@@ -96,9 +96,6 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\ecosystem.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\M.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

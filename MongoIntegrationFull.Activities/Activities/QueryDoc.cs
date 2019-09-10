@@ -1,12 +1,12 @@
 ﻿using System.Activities;
 using System.Threading;
 using System.Threading.Tasks;
-using MongoIntegrationFull.Activities.Properties;
+using UiPathTeam.MongoDB.Activities.Properties;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Collections.Generic;
 
-namespace MongoIntegrationFull.Activities
+namespace UiPathTeam.MongoDB.Activities
 {
     [LocalizedDisplayName("Query Document")]
     [LocalizedDescription("Query Document from Mongo DB")]
@@ -33,6 +33,11 @@ namespace MongoIntegrationFull.Activities
         [LocalizedDescription("Query results")]
         [LocalizedCategory(nameof(Resources.Output))]
         public OutArgument<string[]> Results { get; set; }
+
+        public QueryDoc()
+        {
+            Constraints.Add(ParentConstraint.CheckThatParentsAreOfType<QueryDoc, ParentScope>("Activity is valid only inside Mongo Database Scope"));
+        }
 
         /// <inheritdoc />
         protected override void CacheMetadata(CodeActivityMetadata metadata)

@@ -8,8 +8,8 @@
     <ProjectGuid>{D489B19C-5799-4A3C-A576-4931E4FDD79B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MongoIntegrationFull</RootNamespace>
-    <AssemblyName>MongoIntegrationFull</AssemblyName>
+    <RootNamespace>UiPathTeam.MongoDB</RootNamespace>
+    <AssemblyName>UiPathTeam.MongoDB</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

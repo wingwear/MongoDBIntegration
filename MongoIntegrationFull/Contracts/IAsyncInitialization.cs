@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace MongoIntegrationFull
+namespace UiPathTeam.MongoDB
 {
     public interface IAsyncInitialization
     {

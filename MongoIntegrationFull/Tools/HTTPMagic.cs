@@ -3,9 +3,9 @@ using System.Net.Http;
 using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using MongoIntegrationFull.Properties;
+using UiPathTeam.MongoDB.Properties;
 
-namespace MongoIntegrationFull.Tools
+namespace UiPathTeam.MongoDB.Tools
 {
     public class HTTPMagic
     {

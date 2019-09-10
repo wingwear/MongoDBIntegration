@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace MongoIntegrationFull
+namespace UiPathTeam.MongoDB
 {
     public class CustomException : Exception
     {

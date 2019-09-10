@@ -1,9 +1,9 @@
 ﻿using System.Activities.Presentation.Metadata;
 using System.ComponentModel;
 using System.ComponentModel.Design;
-using MongoIntegrationFull.Activities.Design.Properties;
+using UiPathTeam.MongoDB.Activities.Design.Properties;
 
-namespace MongoIntegrationFull.Activities.Design
+namespace UiPathTeam.MongoDB.Activities.Design
 {
     public class DesignerMetadata : IRegisterMetadata
     {

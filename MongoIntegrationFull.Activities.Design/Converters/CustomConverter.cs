@@ -7,7 +7,7 @@ using System.Globalization;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace MongoIntegrationFull.Activities.Design
+namespace UiPathTeam.MongoDB.Activities.Design
 {
     public class CustomConverter : IValueConverter
     {

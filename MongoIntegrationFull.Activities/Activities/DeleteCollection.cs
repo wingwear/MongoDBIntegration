@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MongoIntegrationFull.Activities.Properties;
+using UiPathTeam.MongoDB.Activities.Properties;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Activities;
 using System.Threading;
 
-namespace MongoIntegrationFull.Activities
+namespace UiPathTeam.MongoDB.Activities
 {
     [LocalizedDisplayName("Delete Collection")]
     [LocalizedDescription("Delete Collection in Mongo DB")]
@@ -26,6 +26,11 @@ namespace MongoIntegrationFull.Activities
         [LocalizedDescription("Name of collection to delete")]
         [LocalizedCategory(nameof(Resources.Input))]
         public InArgument<string> Collection { get; set; }
+
+        public DeleteCollection()
+        {
+            Constraints.Add(ParentConstraint.CheckThatParentsAreOfType<DeleteCollection, ParentScope>("Activity is valid only inside Mongo Database Scope"));
+        }
 
         /// <inheritdoc />
         protected override void CacheMetadata(CodeActivityMetadata metadata)

@@ -1,4 +1,4 @@
-﻿namespace MongoIntegrationFull.Enums
+﻿namespace UiPathTeam.MongoDB.Enums
 {
     public enum TokenSource
     {

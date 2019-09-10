@@ -2,9 +2,9 @@
 using System.Activities;
 using System.ComponentModel;
 using System.Activities.Statements;
-using MongoIntegrationFull.Activities.Properties;
+using UiPathTeam.MongoDB.Activities.Properties;
 
-namespace MongoIntegrationFull.Activities
+namespace UiPathTeam.MongoDB.Activities
 {
 
     [LocalizedDescription("Establish a connection to Mongo DB")]
@@ -15,7 +15,7 @@ namespace MongoIntegrationFull.Activities
         #region Properties
 
         [Browsable(false)]
-        public ActivityAction<MongoIntegrationFull.MongoProperty> Body { get; set; }
+        public ActivityAction<UiPathTeam.MongoDB.MongoProperty> Body { get; set; }
 
         [LocalizedCategory(nameof(Resources.Authentication))]
         [LocalizedDisplayName(nameof(Resources.ParentScopeUsernameDisplayName))]
@@ -30,7 +30,7 @@ namespace MongoIntegrationFull.Activities
         [RequiredArgument]
         [LocalizedCategory(nameof(Resources.Authentication))]
         [LocalizedDisplayName(nameof(Resources.ParentScopeURLDisplayName))]
-        [LocalizedDescription(nameof(Resources.ParentScopeURLDescription) + ", e.g: mongodb://mongodb0.example.com:27017/admin")]
+        [LocalizedDescription(nameof(Resources.ParentScopeURLDescription) + ", e.g: mongodb://mongodb0.example.com:27017")]
         public InArgument<string> URL { get; set; }
 
         internal static string ParentContainerPropertyTag => "MongoScope";
@@ -75,11 +75,11 @@ namespace MongoIntegrationFull.Activities
             {
                 url = url.Replace("mongodb://", "mongodb://" + username + ":" + password + "@");
             }
-            var application = new MongoIntegrationFull.MongoProperty(username, password, url);
+            var application = new UiPathTeam.MongoDB.MongoProperty(username, password, url);
             
             if (Body != null)
             {
-                context.ScheduleAction<MongoIntegrationFull.MongoProperty>(Body, application, this.OnCompleted, this.OnFaulted);
+                context.ScheduleAction<UiPathTeam.MongoDB.MongoProperty>(Body, application, this.OnCompleted, this.OnFaulted);
             }
         }
 
